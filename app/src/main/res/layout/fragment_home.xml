@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp">
+   <!-- tools:context=".SecondActivity"-->
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="438dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:contentDescription="ImageTitleBG"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/type" />
+
+ <androidx.recyclerview.widget.RecyclerView
+     android:id="@+id/my_recycler_view"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:scrollbars="vertical"
+     android:layout_marginTop="40dp"
+     android:layout_marginBottom="10dp"
+     app:layout_constraintBottom_toTopOf="@+id/Pprec"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/Pprec"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:background="@mipmap/ic_leeft_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PageNumb"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Psuiv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
+        android:background="@mipmap/ic_reeght_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PageNumb" />
+
+    <TextView
+        android:id="@+id/PageNumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pageNumb"
+        android:textSize="30sp"
+        app:fontFamily="@font/leaf1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
