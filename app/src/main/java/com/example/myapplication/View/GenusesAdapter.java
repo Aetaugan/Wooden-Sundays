@@ -1,6 +1,4 @@
-package com.example.myapplication;
-
-import java.util.List;
+package com.example.myapplication.View;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,24 +9,26 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.model.Image_;
-import com.example.myapplication.model.RetroPhoto;
+import com.example.myapplication.R;
+import com.example.myapplication.model.Genuses;
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> {
+import java.util.List;
 
-    private List<RetroPhoto> dataList;
+public class GenusesAdapter extends RecyclerView.Adapter<GenusesAdapter.CustomViewHolder> {
+
+    private List<Genuses> dataList;
     // private List<RetroPokemon> dataList;
     private Context context;
     private Picasso picasso;
 
     public interface OnItemClickListener {
-        void onItemClick(RetroPhoto item);
+        void onItemClick(Genuses item);
     }
     private final OnItemClickListener listener;
 
-    public MyAdapter(Context context, List<RetroPhoto> dataList, OnItemClickListener listener) {
+    public GenusesAdapter(Context context, List<Genuses> dataList, OnItemClickListener listener) {
  // public MyAdapter(Context context, List<RetroPokemon> dataList) {
         this.context = context;
         this.dataList = dataList;
@@ -58,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
             coverImage = (ImageView) mView.findViewById(R.id.icon);
         }
 
-        public void bind(final RetroPhoto item, final OnItemClickListener listener) {
+        public void bind(final Genuses item, final OnItemClickListener listener) {
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     listener.onItemClick(item);
@@ -68,7 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     }
 
     @Override
-    public MyAdapter.CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public GenusesAdapter.CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.row_layout, parent, false);
         CustomViewHolder vh = new CustomViewHolder(view);
@@ -78,15 +78,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.CustomViewHolder> 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, final int position) {
         holder.bind(dataList.get(position), listener);
-        final RetroPhoto item = dataList.get(position);
-        String commonName = dataList.get(position).getcommon_name();
+        String commonName = dataList.get(position).getGenName();
         if (commonName == null) {
             commonName = "Unknown";
         }
         String UpperCom = commonName.substring(0, 1).toUpperCase() + commonName.substring(1);
         holder.txtDesc.setText(UpperCom);
 
-        String scientificName = dataList.get(position).getscientific_name();
+        String scientificName = dataList.get(position).getSlug();
         if (scientificName == null){
             scientificName = "Unknown";
         }

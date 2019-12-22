@@ -1,12 +1,10 @@
-
 package com.example.myapplication.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.lang.reflect.Array;
 
-public class Genus {
+public class Genuses {
 
     @SerializedName("slug")
     @Expose
@@ -14,6 +12,9 @@ public class Genus {
     @SerializedName("name")
     @Expose
     private String name;
+    @SerializedName("link")
+    @Expose
+    private String link;
     @SerializedName("kingdom")
     @Expose
     private Kingdom kingdom;
@@ -29,13 +30,34 @@ public class Genus {
     @SerializedName("order")
     @Expose
     private Order order;
-    @SerializedName("fammily")
+    @SerializedName("family")
     @Expose
     private Family family;
+   /* @SerializedName("id")
+    @Expose*/
+    // private Integer id;
 
-    @SerializedName("id")
-    @Expose
-    private Integer id;
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
+    }
+
+    public String getGenName() {
+        return name;
+    }
+
+    public void setGenName(String name) {        this.name = name;    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 
     public Kingdom getKingdom() {
         return kingdom;
@@ -49,7 +71,7 @@ public class Genus {
         return subKingdom;
     }
 
-    public void setSubKingdom(Array SubKingdom) {
+    public void setSubKingdom(SubKingdom subKingdom) {
         this.subKingdom = subKingdom;
     }
 
@@ -85,29 +107,11 @@ public class Genus {
         this.family = family;
     }
 
-    public String getSlug() {
-        return slug;
-    }
-
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
-    public Integer getId() {
+    /*public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
+    }*/
 }

@@ -9,7 +9,7 @@
     android:paddingRight="5dp">
 
  <androidx.recyclerview.widget.RecyclerView
-     android:id="@+id/my_recycler_view"
+     android:id="@+id/GenusesRV"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:scrollbars="vertical"

@@ -3,8 +3,7 @@ package com.example.myapplication.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
-public class Family {
+public class Order {
 
     @SerializedName("slug")
     @Expose
@@ -15,37 +14,26 @@ public class Family {
     @SerializedName("link")
     @Expose
     private String link;
-   /* @SerializedName("id")
-    @Expose*/
-    // private Integer id;
 
-    public String getFSlug() {
+    public String getOSlug() {
         return slug;
     }
 
-    public void setFSlug(String slug) {
+    public void setOSlug(String slug) {
         this.slug = slug;
     }
 
-    public String getFName() {
+    public String getOName() {
         return name;
     }
 
-    public void setFName(String name) {        this.name = name;    }
+    public void setOName(String name) {        this.name = name;    }
 
-    public String getFLink() {
+    public String getOLink() {
         return link;
     }
 
-    public void setFLink(String link) {
+    public void setOLink(String link) {
         this.link = link;
     }
-
-    /*public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }*/
 }

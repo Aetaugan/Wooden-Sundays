@@ -1,6 +1,5 @@
 package com.example.myapplication.View;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -9,20 +8,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.MainActivity;
-import com.example.myapplication.MyAdapter;
-import com.example.myapplication.MyPictureAdapter;
 import com.example.myapplication.R;
-import com.example.myapplication.ViewActivity;
 import com.example.myapplication.model.Division;
 import com.example.myapplication.model.Image_;
 import com.example.myapplication.model.PlantDetail;
-import com.example.myapplication.model.RetroPhoto;
 import com.example.myapplication.model.SubSpecy;
 import com.example.myapplication.model.Variety;
 import com.example.myapplication.network.GetDataService;

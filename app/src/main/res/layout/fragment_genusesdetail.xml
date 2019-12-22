@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+ <androidx.constraintlayout.widget.ConstraintLayout
+     android:background="@color/screenBackground"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context=".View.DetailsActivity">
+
+  <TextView
+      android:id="@+id/GenTitleDetail"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="92dp"
+      android:text="@string/DetailsTitle"
+      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+      android:textSize="30sp"
+      app:fontFamily="@font/berkshire_swash"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/GenNTV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:text="TextView"
+      android:textSize="24sp"
+      app:fontFamily="@font/goldenhills"
+      app:layout_constraintBottom_toTopOf="@+id/VarietiesTV"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.598"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenTitleDetail"
+      app:layout_constraintVertical_bias="0.0" />
+
+
+
+  <Button
+      android:id="@+id/GenKingdomTV"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="80dp"
+      android:background="@drawable/buttonbackground"
+      android:onClick="ClickButt"
+      android:text="Kingdom"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenTitleDetail" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/GenVCL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/externalcontent"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenKingdomTV">
+
+   <TextView
+       android:id="@+id/GenVName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/GenCFVName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="40dp"
+       android:layout_marginRight="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+  <Button
+      android:id="@+id/GenSBButton"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:layout_marginTop="20dp"
+      android:background="@drawable/buttonbackground"
+      android:text="SubKingdom"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenVCL" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/GenSCL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/externalcontent"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenSBButton">
+
+   <TextView
+       android:id="@+id/GenSName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/GenCFSName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="40dp"
+       android:layout_marginRight="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <Button
+      android:id="@+id/GenDbutton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/buttonbackground"
+      android:onClick="ClickButt3"
+      android:text="@string/division"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenSCL" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/GenDCL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/externalcontent"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenDbutton">
+
+   <TextView
+       android:id="@+id/GenDName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/GenCFDName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="40dp"
+       android:layout_marginRight="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <Button
+      android:id="@+id/GenCbutton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/buttonbackground"
+      android:onClick="ClickButt3"
+      android:text="Class"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenDCL" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/GenCCL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/externalcontent"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenCbutton">
+
+   <TextView
+       android:id="@+id/GenCName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/GenCFCName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="40dp"
+       android:layout_marginRight="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <Button
+      android:id="@+id/GenObutton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/buttonbackground"
+      android:onClick="ClickButt3"
+      android:text="Order"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenCCL" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/GenOCL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/externalcontent"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenObutton">
+
+   <TextView
+       android:id="@+id/GenOName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/GenCFOName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="40dp"
+       android:layout_marginRight="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <Button
+      android:id="@+id/GenFButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/buttonbackground"
+      android:onClick="ClickButt3"
+      android:text="Family"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenOCL" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/GenFCL"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/externalcontent"
+      android:paddingTop="5dp"
+      android:paddingBottom="5dp"
+      android:visibility="gone"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/GenFButton">
+
+   <TextView
+       android:id="@+id/GenFName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="40dp"
+       android:layout_marginLeft="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/GenCFFName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginEnd="40dp"
+       android:layout_marginRight="40dp"
+       android:text="TextView"
+       android:textAlignment="center"
+       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+       android:textSize="18sp"
+       app:fontFamily="@font/bubblegum_sans"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+ </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

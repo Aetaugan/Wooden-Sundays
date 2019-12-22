@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.home;
+package com.example.myapplication.ui.genuses;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -16,9 +16,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.View.MyAdapter;
+import com.example.myapplication.View.GenusesAdapter;
 import com.example.myapplication.R;
-import com.example.myapplication.model.RetroPhoto;
+import com.example.myapplication.model.Genuses;
 import com.example.myapplication.network.GetDataService;
 import com.example.myapplication.network.RetrofitClientInstance;
 
@@ -28,10 +28,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeFragment extends Fragment {
+public class GenusesFragment extends Fragment {
 
 
-    private MyAdapter adapter;
+    private GenusesAdapter adapter;
     private RecyclerView recyclerView;
     ProgressDialog progressDialog;
     private Integer id = 1;
@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_genuses, container, false);
         return root;
     }
 
@@ -48,6 +48,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         SetNumbPage();
+
     }
 
     private void SetNumbPage() {
@@ -92,17 +93,17 @@ public class HomeFragment extends Fragment {
         // Call<List<RetroPokemon>> call = service.getAllPokemons();
         System.out.println("LoadApi :"+id);
 
-        Call<List<RetroPhoto>> call = service.getAllPhotos(this.id);
-        call.enqueue(new Callback<List<RetroPhoto>>() {
+        Call<List<Genuses>> call = service.getAllGenuses(this.id);
+        call.enqueue(new Callback<List<Genuses>>() {
             @Override
-            public void onResponse(Call<List<RetroPhoto>> call, Response<List<RetroPhoto>> response) {
+            public void onResponse(Call<List<Genuses>> call, Response<List<Genuses>> response) {
                 // public void onResponse(Call<List<RetroPokemon>> call, Response<List<RetroPokemon>> response) {
                 progressDialog.dismiss();
                 generateDataList(response.body());
             }
 
             @Override
-            public void onFailure(Call<List<RetroPhoto>> call, Throwable t) {
+            public void onFailure(Call<List<Genuses>> call, Throwable t) {
                 // public void onFailure(Call<List<RetroPokemon>> call, Throwable t) {
                 System.out.println("__________________________________________");
                 System.out.println("error: " + t);
@@ -113,14 +114,14 @@ public class HomeFragment extends Fragment {
     }
 
     //Method to generate List of data using RecyclerView with custom adapter
-    private void generateDataList(final List<RetroPhoto> list) {
+    private void generateDataList(final List<Genuses> list) {
         // private void generateDataList(final List<RetroPokemon> list) {
-        recyclerView = getActivity().findViewById(R.id.my_recycler_view);
+        recyclerView = getActivity().findViewById(R.id.GenusesRV);
 
-        adapter = new MyAdapter(getContext(), list, new MyAdapter.OnItemClickListener() {
+        adapter = new GenusesAdapter(getContext(), list, new GenusesAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(RetroPhoto item) {
-                loadDetails(item);
+            public void onItemClick(Genuses item) {
+               loadDetails(item);
             }
         });
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -128,17 +129,15 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
     }
 
-
-
-    public void loadDetails (RetroPhoto item) {
-        DetailsFragment detailsFragment = new DetailsFragment();
+    public void loadDetails (Genuses item) {
+        GenusesDetailsFragment genusesDetailsFragment = new GenusesDetailsFragment();
         Bundle argument = new Bundle();
 
-        argument.putInt("id", item.getId());
-        detailsFragment.setArguments(argument);
+        argument.putString("nameG", item.getGenName());
+        genusesDetailsFragment.setArguments(argument);
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.nav_host_fragment, detailsFragment);
+        fragmentTransaction.replace(R.id.nav_host_fragment, genusesDetailsFragment);
 
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

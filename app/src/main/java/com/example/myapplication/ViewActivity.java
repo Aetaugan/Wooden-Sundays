@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,12 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.View.DetailsActivity;
+import com.example.myapplication.View.MyAdapter;
 import com.example.myapplication.model.RetroPhoto;
 import com.example.myapplication.network.GetDataService;
 import com.example.myapplication.network.RetrofitClientInstance;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -104,7 +102,6 @@ public class ViewActivity extends AppCompatActivity {
 
     //Method to generate List of data using RecyclerView with custom adapter
     private void generateDataList(final List<RetroPhoto> list) {
- // private void generateDataList(final List<RetroPokemon> list) {
         recyclerView = findViewById(R.id.my_recycler_view);
 
         adapter = new MyAdapter(this, list, new MyAdapter.OnItemClickListener() {
@@ -116,26 +113,7 @@ public class ViewActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ViewActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        // put this after your definition of your recyclerview
-        // input in your data mode in this example a java.util.List, adjust if necessary
-        // adapter is your adapter
-     /*   ItemTouchHelper.SimpleCallback simpleItemTouchCallback =
-                new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-                    @Override
-                    public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-                        return false;
-                    }
-                 @Override
-                    public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                      //  list.remove(viewHolder.getAdapterPosition());
-                        //adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
 
-
-                    }
-
-                };
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);*/
     }
 
     private static final String KEY = "key";

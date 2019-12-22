@@ -18,15 +18,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    private static final String TOTAL_COUNT = "total_count";
-
-
-    public void openView (View view) {
-        // Create an Intent to start the second activity
-        Intent viewIntent = new Intent(this, ViewActivity.class);
-        startActivity(viewIntent);
-    }
-
     public void openNavBar (View view) {
         // Create an Intent to start the second activity
         Intent viewIntent = new Intent(this, NavBarActivity.class);

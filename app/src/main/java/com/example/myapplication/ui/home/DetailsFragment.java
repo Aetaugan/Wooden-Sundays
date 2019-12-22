@@ -1,7 +1,6 @@
 package com.example.myapplication.ui.home;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,23 +17,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication.MyAdapter;
-import com.example.myapplication.MyPictureAdapter;
+import com.example.myapplication.View.MyPictureAdapter;
 import com.example.myapplication.R;
-import com.example.myapplication.View.DetailsActivity;
 import com.example.myapplication.View.SubcSecydapter;
 import com.example.myapplication.View.VarietiesAdapter;
 import com.example.myapplication.model.Division;
 import com.example.myapplication.model.Family;
 import com.example.myapplication.model.Image_;
 import com.example.myapplication.model.PlantDetail;
-import com.example.myapplication.model.RetroPhoto;
 import com.example.myapplication.model.SubSpecy;
 import com.example.myapplication.model.Variety;
 import com.example.myapplication.network.GetDataService;
 import com.example.myapplication.network.RetrofitClientInstance;
 import com.jakewharton.picasso.OkHttp3Downloader;
-import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -139,7 +134,14 @@ public class DetailsFragment extends Fragment {
         // Create handle for the RetrofitInstance interface
         GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
         Integer intent = getArguments().getInt("id");
-        Call<PlantDetail> call = service.getAllDetails(intent);
+        String query = getArguments().getString("query");
+        Call<PlantDetail> call = null;
+        if (intent >= 0){
+           call = service.getAllDetails(intent);
+        }
+        else if (query != null){
+            call = service.getPlant(query);
+        }
 
         call.enqueue(new Callback<PlantDetail>() {
             @Override
@@ -183,8 +185,8 @@ public class DetailsFragment extends Fragment {
                 if ( Familys !=  null){
                     Butt4.setEnabled(true);
                     FCName = "Family";
-                    FDCFName = "Common Family Name\n --- \n" + Familys.getDivName().substring(0, 1).toUpperCase() +Familys.getDivName().substring(1);
-                    FDName = "Slug\n --- \n" + Familys.getSlug().substring(0, 1).toUpperCase() +Familys.getDivName().substring(1);
+                    FDCFName = "Common Family Name\n --- \n" + Familys.getFName().substring(0, 1).toUpperCase() +Familys.getFName().substring(1);
+                    FDName = "Slug\n --- \n" + Familys.getFSlug().substring(0, 1).toUpperCase() +Familys.getFSlug().substring(1);
                 }
                 else{
                     Butt4.setEnabled(false);
